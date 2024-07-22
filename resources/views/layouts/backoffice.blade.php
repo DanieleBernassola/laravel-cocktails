@@ -11,7 +11,7 @@
 <body>
 
     @include('shared.header')
-    @yield('show-home')
+    @yield('content')
     @include('shared.footer')
 
 </body>

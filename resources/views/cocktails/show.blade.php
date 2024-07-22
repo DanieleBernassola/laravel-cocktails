@@ -1,6 +1,6 @@
 @extends('layouts.backoffice')
 
-@section('show-home')
+@section('content')
     <div class="container my-5">
 
         <h2 class="text-center my-5">Informazioni cocktail</h2>
