@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row text-black">
+        <div class="row">
             <h2 class="text-center my-5">Informazioni cocktail</h2>
             <div class="col mb-5">
                 <h3>Nome: {{ $cocktail->name }}</h3>
