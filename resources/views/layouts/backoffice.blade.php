@@ -49,13 +49,13 @@
                   </a>
               </li>
               <li>
-                  <a href="{{ url('/') }}" class="nav-link text-white bg-light-hover">
+                  <a href="{{ route('cocktails.index') }}" class="nav-link text-white bg-light-hover">
                       <i class="fa-solid fa-chart-simple d-inline  me-2"></i>
                       <span class="d-none d-md-inline-block">Cocktails List</span>
                   </a>
               </li>
               <li>
-                  <a href="{{ url('/create') }}" class="nav-link text-white bg-light-hover">
+                  <a href="{{ route('cocktails.create') }}" class="nav-link text-white bg-light-hover">
                       <i class="fa-solid fa-plus d-inline me-2"></i>
                       <span class="d-none d-md-inline-block">Create new Cocktail</span>
                   </a>
@@ -63,11 +63,11 @@
           </ul>
           <hr>
           <div>
-            <div class="d-flex">
+            {{-- <div class="d-flex">
                 <div class="my-1">
                     <img src="https://avatars.githubusercontent.com/u/162736759?v=4" alt="" width="32" height="32" class="rounded-circle me-2 mx-1">
                 </div>
-              </div>
+              </div> --}}
           </div>
       </div>
 
