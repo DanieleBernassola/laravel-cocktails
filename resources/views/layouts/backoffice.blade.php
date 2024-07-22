@@ -23,10 +23,10 @@
                         <a class="nav-link" href="{{ url('/') }}">>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/admin/projects') }}">Projects</a>
+                        <a class="nav-link" href="{{ url('/') }}">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('admin/projects/create') }}">Create</a>
+                        <a class="nav-link" href="{{ url('/') }}">Create</a>
                     </li>
                 </ul>
             </div>
