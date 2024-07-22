@@ -15,28 +15,28 @@
                             </ul>
                         </div>         
                     @endif
-               <button>Clicca qui per creare il tuo cocktail</button> 
-            </div>
 
-            {{-- @foreach ($cocktails as $cocktail)
+                    <form action="{{ route('cocktails.store')}}" method="POST"> 
+                        @csrf
 
-                <div class="col-4">
-                    <div class="card position-relative h-100">
-                        @if ($cocktail->is_alcoholic == 1)
-                            <span class="alcoholic p-1 rounded">ALCOHOLIC</span>
-                        @endif
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyATogFnv4VSmjGKaiJlEl_GY6bddoxE9hRQ&s" class="card-img-top" alt="cocktail">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $cocktail->name }}</h5>
-                            <p class="card-text">Ingredients: {{ $cocktail->ingredients }}</p>
-                            <p class="card-text">Price: &euro;{{ $cocktail->price }}</p>
-                            <p class="card-text">Gradation: {{ $cocktail->gradation }}&percnt; </p>
-                        </div>
-                    </div>
-                </div>
+                        <label for="name" class="form-label ">Nome: </label>
+                        <input type="text" id="name" class="form-control" name="name" placeholder="Nome cocktail">
+    
+                        <label for="ingredients" class="form-label ">Ingredienti: </label>
+                        <input type="text" id="ingredients" class="form-control" name="ingredients" placeholder="Ingredienti cocktail">
+    
+                        <label for="price" class="form-label ">Prezzo: </label>
+                        <input type="number" id="price" class="form-control" name="price" placeholder="Nome cocktail">
 
-            @endforeach --}}
-            
+                        <label for="is_alcoholic" class="form-label ">Alcolico?</label>
+                        <input type="text" id="is_alcoholic" class="form-control" name="is_alcoholic" placeholder="Nome cocktail">
+    
+                        <label for="gradation" class="form-label ">Gradazione alcolica: </label>
+                        <input type="text" id="gradation" class="form-control" name="gradation" placeholder="Nome cocktail">
+                        
+                        <button type="submit">Clicca qui per creare il tuo cocktail</button> 
+                    </form>
+            </div> 
         </div>
     </div>
     @endsection

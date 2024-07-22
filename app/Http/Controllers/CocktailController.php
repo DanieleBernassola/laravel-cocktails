@@ -14,7 +14,7 @@ class CocktailController extends Controller
     {
         $cocktails = Cocktail::all();
         //da rivedere con le rotte
-        return view('cocktail.index', compact('cocktails'));
+        return view('cocktails.index', compact('cocktails'));
     }
 
     /**
@@ -22,7 +22,7 @@ class CocktailController extends Controller
      */
     public function create()
     {
-        return view('cocktails.create')->with('il cockail è stato inserito nella lista correttamente');
+        return view('cocktails.create')->with('Il cocktail è stato inserito nella lista correttamente');
     }
 
     /**
@@ -33,9 +33,9 @@ class CocktailController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'ingredients' => 'required',
-            'price' => 'required|string',
-            'gradation' => 'nullable|string',
-            'is_alcoholic' => 'required',
+            'price' => 'nullable',
+            'gradation' => 'nullable',
+            'is_alcoholic' => 'nullable',
         ]);
 
         $cocktail = new Cocktail();
@@ -45,7 +45,7 @@ class CocktailController extends Controller
         $cocktail->gradation = $validated['gradation'];
         $cocktail->is_alcoholic = $validated['is_alcoholic'];
         $cocktail->save();
-        return redirect()->route('cocktails.index')->with('cockail salvato');
+        return redirect()->route('cocktails.index')->with('Cocktail salvato');
     }
 
     /**
