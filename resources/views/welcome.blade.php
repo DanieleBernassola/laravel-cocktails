@@ -1,26 +1,26 @@
 @extends('layouts.app')
 
-@section('main-home')
+@section('content')
+<div class="homepage">
 
-    <div class="container my-5">
+    <div class="jumbo d-flex align-items-center justify-content-center">
+        <span>DISCOVER OUR COCKTAILS</span>
+    </div>
 
-        <h1 class="text-center my-5">Cocktails</h1>
+    <div class="container py-5">
 
-        <div class="row g-3">
+        <div class="row g-5">
 
             @foreach ($cocktails as $cocktail)
 
                 <div class="col-4">
-                    <div class="card position-relative h-100">
-                        @if ($cocktail->is_alcoholic == 1)
-                            <span class="alcoholic p-1 rounded">ALCOHOLIC</span>
+                    <div class="card position-relative h-100 border-0 grow">
+                        @if ($cocktail->is_alcoholic)
+                            <span class="alcoholic p-1 rounded z-3 text-danger">ALCOHOLIC</span>
                         @endif
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyATogFnv4VSmjGKaiJlEl_GY6bddoxE9hRQ&s" class="card-img-top" alt="cocktail">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $cocktail->name }}</h5>
-                            <p class="card-text">Ingredients: {{ $cocktail->ingredients }}</p>
-                            <p class="card-text">Price: &euro;{{ $cocktail->price }}</p>
-                            <p class="card-text">Gradation: {{ $cocktail->gradation }}&percnt; </p>
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/378f6866713031.5b1fb686824f6.jpg" class="card-img" alt="cocktail">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title pt-5 text-white">{{ $cocktail->name }}</h5>
                         </div>
                     </div>
                 </div>
@@ -29,5 +29,8 @@
             
         </div>
     </div>
+</div>
+
+    
 
 @endsection
