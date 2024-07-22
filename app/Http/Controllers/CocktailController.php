@@ -104,6 +104,6 @@ class CocktailController extends Controller
     {
         $cocktail = Cocktail::findOrFail($id);
         $cocktail->delete();
-        return redirect()->route('cocktails.index')->with('success', 'Cocktail deleted successfully');
+        return redirect()->route('cocktails.index')->with('cocktail cancellato');
     }
 }
