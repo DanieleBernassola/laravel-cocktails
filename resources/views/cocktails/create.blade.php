@@ -1,5 +1,5 @@
 @extends('layouts.backoffice')
-    
+    @section('content')
 
     <div class="container my-5">
         <div class="row g-3">
@@ -39,5 +39,4 @@
             
         </div>
     </div>
-
-@endsection
+    @endsection

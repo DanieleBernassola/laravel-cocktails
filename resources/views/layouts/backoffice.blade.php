@@ -9,7 +9,7 @@
 <body>
    
     @include('shared.header')
-    @yield('cocktails.create')
+    @yield('content')
     @include('shared.footer')
 
 </body>
