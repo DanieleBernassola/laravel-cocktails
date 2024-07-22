@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CocktailController;
 use App\Http\Controllers\Guest\CocktailsController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [CocktailsController::class, 'index']);
+
+Route::resource('cocktails', CocktailController::class);

@@ -36,7 +36,9 @@ class CocktailController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $cocktails = Cocktail::find($id);
+
+        return view('cocktails.show', compact('cocktails'));
     }
 
     /**
