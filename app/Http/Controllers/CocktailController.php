@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cocktail;
+use FFI;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\File;
 
 //controller con le crud
 
@@ -43,6 +44,7 @@ class CocktailController extends Controller
             'is_alcoholic' => 'required',
         ]);
 
+        $filename = null;
         if ($request->has('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
@@ -90,6 +92,7 @@ class CocktailController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'ingredients' => 'required',
+            'image' => 'nullable|mimes:png,jpg,jpeg,webp',
             'price' => 'required|numeric',
             'gradation' => 'nullable|numeric',
             'is_alcoholic' => 'required',
@@ -98,6 +101,21 @@ class CocktailController extends Controller
 
         $cocktail = Cocktail::findOrFail($id);
 
+        if ($request->has('image')) {
+            if ($cocktail->image && file_exists(public_path($cocktail->image))) {
+                unlink(public_path($cocktail->image));
+            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $path = public_path('uploads/cocktails/');
+            $file->move($path, $filename);
+
+            if (File::exists($cocktail->image)) {
+                File::delete($cocktail->image);
+            }
+            $cocktail->image = $filename ? 'uploads/cocktails/' . $filename : null;
+        }
 
         $cocktail->name = $validated['name'];
         $cocktail->ingredients = $validated['ingredients'];
@@ -105,9 +123,7 @@ class CocktailController extends Controller
         $cocktail->gradation = (float)$validated['gradation'];
         $cocktail->is_alcoholic = $validated['is_alcoholic'];
 
-
         $cocktail->save();
-
 
         return redirect()->route('cocktails.index')->with('success', 'cocktail modificato');
     }
@@ -119,6 +135,9 @@ class CocktailController extends Controller
     public function destroy(string $id)
     {
         $cocktail = Cocktail::findOrFail($id);
+        if (File::exists($cocktail->image)) {
+            File::delete($cocktail->image);
+        }
         $cocktail->delete();
         return redirect()->route('cocktails.index')->with('success', 'cocktail deleted');
     }
