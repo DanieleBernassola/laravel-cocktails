@@ -15,34 +15,57 @@ body {
     overflow-x: hidden;
 }
 
-a:hover {
-    color: rgba(123, 35, 65, 0.84);
-}
-
-a::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(123, 35, 65, 0.84);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-a:hover::before {
-    transform: scaleX(1);
-}
-
 header {
     background-color: $blue_background;
+
+    a:hover {
+        color: rgba(123, 35, 65, 0.84);
+    }
+    
+    a::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(123, 35, 65, 0.84);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+    
+    a:hover::before {
+        transform: scaleX(1);
+    }
+
 }
 
 footer {
     background: rgb(119, 140, 204);
     background: linear-gradient(0deg, rgba(119, 140, 204, 1) 0%, rgba(196, 159, 224, 1) 100%);
+
+    a:hover {
+        color: rgba(123, 35, 65, 0.84);
+    }
+    
+    a::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(123, 35, 65, 0.84);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+    
+    a:hover::before {
+        transform: scaleX(1);
+    }
+    
 }
 
 .homepage {
