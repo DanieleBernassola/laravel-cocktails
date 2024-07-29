@@ -3,7 +3,7 @@
 
     <div class="container my-5">
         <div class="row g-3">
-            <h1 class="text-center my-5">Sezione per creare il tuo cocktail</h1>
+            <h1 class="text-center my-5 text-blue">Sezione per creare il tuo cocktail</h1>
 
             <div class="col">
                 @if ($errors->any())

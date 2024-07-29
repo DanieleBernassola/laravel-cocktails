@@ -33,10 +33,13 @@
           </div>
       </nav>
     </div>
+    <!-- header per tablet e smartphone MOMENTANEAMENTE NON TOCCARE -->
 
-    <main class="d-flex overflow-hidden bg-dark">
+
+
+    <main class="d-flex overflow-hidden ">
         <!-- side-bar -->
-        <div class=" col-md-3 col-lg-3 d-flex flex-column flex-shrink-0 p-3 text-white d-none d-md-block bg-dark min-vh-100">
+        <div class=" col-md-3 col-lg-3 d-flex flex-column flex-shrink-0 p-3 text-white d-none d-md-block bg-costum min-vh-100">
           <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
               <span class="fs-4">Admin Area</span>
           </a>
@@ -49,13 +52,13 @@
                   </a>
               </li>
               <li>
-                  <a href="{{ url('/') }}" class="nav-link text-white bg-light-hover">
+                  <a href="{{ url('cocktails/') }}" class="nav-link text-white bg-light-hover">
                       <i class="fa-solid fa-chart-simple d-inline  me-2"></i>
                       <span class="d-none d-md-inline-block">Cocktails List</span>
                   </a>
               </li>
               <li>
-                  <a href="{{ url('/create') }}" class="nav-link text-white bg-light-hover">
+                  <a href="{{ url('cocktails/create') }}" class="nav-link text-white bg-light-hover">
                       <i class="fa-solid fa-plus d-inline me-2"></i>
                       <span class="d-none d-md-inline-block">Create new Cocktail</span>
                   </a>
@@ -65,7 +68,7 @@
           <div>
             <div class="d-flex">
                 <div class="my-1">
-                    <img src="https://avatars.githubusercontent.com/u/162736759?v=4" alt="" width="32" height="32" class="rounded-circle me-2 mx-1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT35Sk9mMEcBuooCRGNUylcYn-PR6IZhDHzvA&s" alt="" width="32" height="32" class="rounded-circle me-2 mx-1">
                 </div>
               </div>
           </div>
