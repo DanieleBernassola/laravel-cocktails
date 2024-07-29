@@ -22,7 +22,7 @@
                     <th class="text-uppercase text-blue ">name</th>
                     <th class="text-uppercase text-blue">Alcoholic</th>
                     <th class="text-uppercase text-blue">price</th>
-                    <th class="text-uppercase text-center text-blue">action</th>
+                    <th class="text-uppercase -center text-blue">action</th>
                 </tr>
             </thead>
             <tbody>
