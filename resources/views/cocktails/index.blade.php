@@ -22,7 +22,7 @@
                     <th class="text-uppercase text-blue ">name</th>
                     <th class="text-uppercase text-blue">Alcoholic</th>
                     <th class="text-uppercase text-blue">price</th>
-                    <th class="text-uppercase text-blue">action</th>
+                    <th class="text-uppercase text-center text-blue">action</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,10 +51,10 @@
                         {{-- <td class="text-center">
                             <a href="{{ route('projects.show', $project->id) }}" class="btn btn-info rounded-1">
                                 <i class="fa-regular fa-eye" style="color: #ffffff;"></i>
-                            </a>
-                            <a href="{{ route('projects.edit', $project->id) }}" class="btn btn-warning rounded-1">
-                                <i class="fa-solid fa-pencil" style="color: #ffffff;"></i>
                             </a>--}}
+                            <a href="{{ route('cocktails.edit', $cocktail->id) }}" class="btn btn-warning rounded-1">
+                                <i class="fa-solid fa-pencil" style="color: #ffffff;"></i>
+                            </a>
                             <form action="{{ route('cocktails.destroy', $cocktail->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')

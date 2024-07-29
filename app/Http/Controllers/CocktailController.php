@@ -45,8 +45,8 @@ class CocktailController extends Controller
         $cocktail = new Cocktail();
         $cocktail->name = $validated['name'];
         $cocktail->ingredients = $validated['ingredients'];
-        $cocktail->price = $validated['price'];
-        $cocktail->gradation = $validated['gradation'];
+        $cocktail->price = (float) $validated['price'];
+        $cocktail->gradation = (float) $validated['gradation'];
         $cocktail->is_alcoholic = $validated['is_alcoholic'];
         $cocktail->save();
         return redirect()->route('cocktails.index')->with('success', 'cockail salvato');
@@ -67,7 +67,7 @@ class CocktailController extends Controller
     public function edit(string $id)
     {
         $cocktail = Cocktail::findOrFail($id);
-        return view('cocktail.edit', compact('cocktail'));
+        return view('cocktails.edit', compact('cocktail'));
     }
 
     /**
@@ -78,8 +78,8 @@ class CocktailController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'ingredients' => 'required',
-            'price' => 'required|string',
-            'gradation' => 'nullable|string',
+            'price' => 'required|numeric',
+            'gradation' => 'nullable|numeric',
             'is_alcoholic' => 'required',
         ]);
 
@@ -89,15 +89,15 @@ class CocktailController extends Controller
 
         $cocktail->name = $validated['name'];
         $cocktail->ingredients = $validated['ingredients'];
-        $cocktail->price = $validated['price'];
-        $cocktail->gradation = $validated['gradation'];
+        $cocktail->price = (float)$validated['price'];
+        $cocktail->gradation = (float)$validated['gradation'];
         $cocktail->is_alcoholic = $validated['is_alcoholic'];
 
 
         $cocktail->save();
 
 
-        return redirect()->route('cocktail.index')->with('cocktail modificato');
+        return redirect()->route('cocktails.index')->with('success', 'cocktail modificato');
     }
 
 
