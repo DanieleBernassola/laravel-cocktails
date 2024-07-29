@@ -79,8 +79,4 @@
         </div>
     </main>
 </body>
-<<<<<<< HEAD
-=======
-
->>>>>>> feat/create/alessandro
 </html>

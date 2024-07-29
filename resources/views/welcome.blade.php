@@ -4,7 +4,8 @@
 <div class="homepage">
 
     <div class="jumbo d-flex align-items-center justify-content-center">
-        <span>DISCOVER OUR COCKTAILS</span>
+        <h2 class="log-line">DISCOVER OUR <br> 
+            COCKTAILS</h2>
     </div>
 
     <div class="container py-5">
