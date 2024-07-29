@@ -9,6 +9,13 @@
             <h3 class="text-blue text-uppercase">cocktails list</h3>
             <hr class="text-purple">
         </div>
+        <div class="col-md-12">
+            @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        </div>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -40,21 +47,22 @@
                                 <p class=" fw-bolder text-purple">{{ $cocktail->price }}</p>
                             </div>
                         </td>
+                        <td>
                         {{-- <td class="text-center">
                             <a href="{{ route('projects.show', $project->id) }}" class="btn btn-info rounded-1">
                                 <i class="fa-regular fa-eye" style="color: #ffffff;"></i>
                             </a>
                             <a href="{{ route('projects.edit', $project->id) }}" class="btn btn-warning rounded-1">
                                 <i class="fa-solid fa-pencil" style="color: #ffffff;"></i>
-                            </a>
-                            <form action="{{ route('projects.destroy', $project->id) }}" method="POST" style="display:inline-block;">
+                            </a>--}}
+                            <form action="{{ route('cocktails.destroy', $cocktail->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger rounded-1">
                                     <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
                                 </button>
                             </form>
-                        </td> --}}
+                        </td> 
                     </tr>
                 @endforeach 
             </tbody>

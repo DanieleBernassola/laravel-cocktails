@@ -17,7 +17,7 @@ class CocktailController extends Controller
     {
         $cocktails = Cocktail::all();
         //da rivedere con le rotte
-        return view('cocktail.index', compact('cocktails'));
+        return view('cocktails.index', compact('cocktails'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CocktailController extends Controller
     public function create()
     {
         $cocktails = Cocktail::all();
-        return view('cocktail.create', compact('cocktails'))->with('success', 'il cockail è stato inserito nella lista correttamente');
+        return view('cocktails.create', compact('cocktails'))->with('success', 'il cockail è stato inserito nella lista correttamente');
     }
 
     /**
@@ -36,9 +36,9 @@ class CocktailController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required| max:50',
-            'ingredients' => 'required',
-            'price' => 'required|string',
-            'gradation' => 'nullable|string',
+            'ingredients' => 'nullable',
+            'price' => 'required|numeric', //price e gradation modificati da string in numeric
+            'gradation' => 'nullable|numeric',
             'is_alcoholic' => 'required',
         ]);
 
@@ -49,7 +49,7 @@ class CocktailController extends Controller
         $cocktail->gradation = $validated['gradation'];
         $cocktail->is_alcoholic = $validated['is_alcoholic'];
         $cocktail->save();
-        return redirect()->route('cocktail.index')->with('success', 'cockail salvato');
+        return redirect()->route('cocktails.index')->with('success', 'cockail salvato');
     }
 
     /**
@@ -108,6 +108,6 @@ class CocktailController extends Controller
     {
         $cocktail = Cocktail::findOrFail($id);
         $cocktail->delete();
-        return redirect()->route('cocktail.index')->with('cocktail cancellato');
+        return redirect()->route('cocktails.index')->with('success', 'cocktail deleted');
     }
 }

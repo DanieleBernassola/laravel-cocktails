@@ -28,17 +28,17 @@
 
             <div class="form-group mb-3">
                 <label for="ingredients" class="text-blue">Cocktail's ingredients</label>
-                <textarea class="form-control" id="ingredients" name="ingredients" placeholder="ex: Lemon, Tequila, Sugar" required></textarea>
+                <textarea class="form-control" id="ingredients" name="ingredients" placeholder="ex: Lemon, Tequila, Sugar"></textarea>
             </div>
 
             <div class="form-group mb-3">
                 <label for="price" class="text-blue">Price</label>
-                <input type="text" class="form-control" id="price" name="price" placeholder="ex: 5.99" required>
+                <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="ex: 5.99" required>
             </div>
 
             <div class="form-group mb-3">
                 <label for="gradation" class="text-blue">Gradation</label>
-                <input type="text" class="form-control" id="gradation" name="gradation" required>
+                <input type="number" step="0.01" class="form-control" id="gradation" name="gradation" placeholder="ex: 5.00" required>
             </div>
 
             <div class="form-group mb-3">
