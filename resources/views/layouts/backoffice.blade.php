@@ -52,21 +52,13 @@
                   </a>
               </li>
               <li>
-<<<<<<< HEAD
-                  <a href="{{ url('cocktails/') }}" class="nav-link text-white bg-light-hover">
-=======
                   <a href="{{ route('cocktails.index') }}" class="nav-link text-white bg-light-hover">
->>>>>>> 775448b547451072388402f80395b32d2439a53b
                       <i class="fa-solid fa-chart-simple d-inline  me-2"></i>
                       <span class="d-none d-md-inline-block">Cocktails List</span>
                   </a>
               </li>
               <li>
-<<<<<<< HEAD
-                  <a href="{{ url('cocktails/create') }}" class="nav-link text-white bg-light-hover">
-=======
                   <a href="{{ route('cocktails.create') }}" class="nav-link text-white bg-light-hover">
->>>>>>> 775448b547451072388402f80395b32d2439a53b
                       <i class="fa-solid fa-plus d-inline me-2"></i>
                       <span class="d-none d-md-inline-block">Create new Cocktail</span>
                   </a>
