@@ -9,7 +9,7 @@
                 <p class="text-blue">Ingredienti: {{ $cocktail->ingredients }}</p>
                 <p class="text-blue">Prezzo: {{ $cocktail->price }} $</p>
                 @if ($cocktail->is_alcoholic)
-                    <p class="danger">ALCOLICO</p>
+                    <p class="text-danger">ALCOLICO</p>
                     <p class="text-danger">Gradazione alcolica: {{ $cocktail->gradation }}</p>
                     @else
                     <p class="text-purple">Analcolico</p>
