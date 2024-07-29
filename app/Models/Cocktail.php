@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Cocktail extends Model
 {
     use HasFactory;
+
+    protected $table = 'cocktails';
+
+    protected $fillable = [
+        'name',
+        'ingredients',
+        'image',
+        'price',
+        'gradiation',
+        'is_alcoholic',
+    ];
 }

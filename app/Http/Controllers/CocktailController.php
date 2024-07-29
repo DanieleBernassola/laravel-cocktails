@@ -37,14 +37,26 @@ class CocktailController extends Controller
         $validated = $request->validate([
             'name' => 'required| max:50',
             'ingredients' => 'nullable',
+            'image' => 'nullable|mimes:png,jpg,jpeg,webp',
             'price' => 'required|numeric', //price e gradation modificati da string in numeric
             'gradation' => 'nullable|numeric',
             'is_alcoholic' => 'required',
         ]);
 
+        if ($request->has('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+
+            $filename = time() . '.' . $extension;
+
+            $path = 'uploads/cocktails/';
+            $file->move($path, $filename);
+        }
+
         $cocktail = new Cocktail();
         $cocktail->name = $validated['name'];
         $cocktail->ingredients = $validated['ingredients'];
+        $cocktail->image = $validated['image'];
         $cocktail->price = (float) $validated['price'];
         $cocktail->gradation = (float) $validated['gradation'];
         $cocktail->is_alcoholic = $validated['is_alcoholic'];
