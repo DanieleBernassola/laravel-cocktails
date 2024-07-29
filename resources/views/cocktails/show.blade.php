@@ -11,6 +11,8 @@
                 @if ($cocktail->is_alcoholic)
                     <p class="danger">ALCOLICO</p>
                     <p class="text-danger">Gradazione alcolica: {{ $cocktail->gradation }}</p>
+                    @else
+                    <p class="text-purple">Analcolico</p>
                 @endif
 
                 <a href="{{ route('cocktails.index') }}" class="btn btn-primary rounded-1">
