@@ -58,7 +58,7 @@ class CocktailController extends Controller
     public function show(string $id)
     {
         $cocktail = Cocktail::findOrFail($id);
-        return view('cocktail.show', compact('cocktail'));
+        return view('cocktails.show', compact('cocktail'));
     }
 
     /**

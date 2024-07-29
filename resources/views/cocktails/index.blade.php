@@ -48,10 +48,10 @@
                             </div>
                         </td>
                         <td>
-                        {{-- <td class="text-center">
-                            <a href="{{ route('projects.show', $project->id) }}" class="btn btn-info rounded-1">
+                            <td class="text-center">
+                            <a href="{{ route('cocktails.show', $cocktail->id) }}" class="btn btn-info rounded-1">
                                 <i class="fa-regular fa-eye" style="color: #ffffff;"></i>
-                            </a>--}}
+                            </a>
                             <a href="{{ route('cocktails.edit', $cocktail->id) }}" class="btn btn-warning rounded-1">
                                 <i class="fa-solid fa-pencil" style="color: #ffffff;"></i>
                             </a>
