@@ -1,42 +1,58 @@
 @extends('layouts.backoffice')
-    @section('content')
 
-    <div class="container my-5">
-        <div class="row g-3">
-            <h1 class="text-center my-5 text-blue">Sezione per creare il tuo cocktail</h1>
+{{-- cocktail.create --}}
+@section('content')
+<div class="container my-5">
+    <div class="row g-3">
+        <h3 class="text-blue">Creare il tuo cocktail</h3>
+        <hr class="text-purple">
 
-            <div class="col">
-                @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>         
-                    @endif
-               <button>Clicca qui per creare il tuo cocktail</button> 
+        <div class="col">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>         
+            @endif
+        </div>
+
+        <form action="{{ route('cocktails.store')}}" method="POST">
+            @csrf
+            <div class="form-group mb-3">
+                <label for="name" class="text-blue">Cocktail Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="ex: Mojito" required>
             </div>
 
-            {{-- @foreach ($cocktails as $cocktail)
+            <div class="form-group mb-3">
+                <label for="ingredients" class="text-blue">Cocktail's ingredients</label>
+                <textarea class="form-control" id="ingredients" name="ingredients" placeholder="ex: Lemon, Tequila, Sugar" required></textarea>
+            </div>
 
-                <div class="col-4">
-                    <div class="card position-relative h-100">
-                        @if ($cocktail->is_alcoholic == 1)
-                            <span class="alcoholic p-1 rounded">ALCOHOLIC</span>
-                        @endif
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyATogFnv4VSmjGKaiJlEl_GY6bddoxE9hRQ&s" class="card-img-top" alt="cocktail">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $cocktail->name }}</h5>
-                            <p class="card-text">Ingredients: {{ $cocktail->ingredients }}</p>
-                            <p class="card-text">Price: &euro;{{ $cocktail->price }}</p>
-                            <p class="card-text">Gradation: {{ $cocktail->gradation }}&percnt; </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-group mb-3">
+                <label for="price" class="text-blue">Price</label>
+                <input type="text" class="form-control" id="price" name="price" placeholder="ex: 5.99" required>
+            </div>
 
-            @endforeach --}}
-            
-        </div>
+            <div class="form-group mb-3">
+                <label for="gradation" class="text-blue">Gradation</label>
+                <input type="text" class="form-control" id="gradation" name="gradation" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="is_alcoholic" class="text-blue">Is Alcoholic</label>
+                <select class="form-control" id="is_alcoholic" name="is_alcoholic" required>
+                    <option value="1">Si</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class='col-md-12'>
+                <button class="btn btn-primary" type="submit">Clicca qui per creare il tuo cocktail</button>
+            </div>
+        </form>
     </div>
-    @endsection
+</div>
+@endsection

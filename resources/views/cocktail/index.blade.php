@@ -1,8 +1,8 @@
 @extends('layouts.backoffice')
 
+{{-- cocktail.index --}}
+
 @section('content')
-
-
 <div class="container">
     <div class="row">
         <div class="col-md-12 mb-3">
@@ -12,7 +12,6 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    {{-- <th class="text-uppercase">#</th> --}}
                     <th class="text-uppercase text-blue ">name</th>
                     <th class="text-uppercase text-blue">Alcoholic</th>
                     <th class="text-uppercase text-blue">price</th>
@@ -22,11 +21,6 @@
             <tbody>
                     @foreach ($cocktails as $cocktail)
                     <tr>
-                        {{-- <td>
-                            <div>
-                                <img src="{{ $project->image }}" alt="{{ $project->title }}" class="w-100" style="max-width: 50px; min-width: 50px;">
-                            </div>
-                        </td> --}}
                         <td>
                             <div>
                                 <p class=" fw-bolder text-purple">{{ $cocktail->name }}</p>

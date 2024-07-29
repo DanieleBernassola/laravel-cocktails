@@ -4,7 +4,7 @@
 [] test dei file blade per la gestione del cockatail
 
     [x]controllo del blade index
-    []controllo del blade create
+    [x]controllo del blade create
     []controllo del blade edit
     []controllo del blade show
     []controllo del blade delete
@@ -23,3 +23,9 @@
 -----------------------------------------------------------------------------------
 
 [] drop della colonna ingredients
+
+
+*/ [] inserire nella cta di edit la route a edit
+
+
+*/ [] tenere conto che probabilmente ingredients diventerà una tabella
