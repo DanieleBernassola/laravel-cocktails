@@ -25,12 +25,8 @@ class CocktailController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
         $cocktails = Cocktail::all();
         return view('cocktails.create', compact('cocktails'))->with('success', 'il cockail è stato inserito nella lista correttamente');
-=======
-        return view('cocktails.create')->with('Il cocktail è stato inserito nella lista correttamente');
->>>>>>> 775448b547451072388402f80395b32d2439a53b
     }
 
     /**
@@ -39,19 +35,11 @@ class CocktailController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-<<<<<<< HEAD
             'name' => 'required| max:50',
             'ingredients' => 'nullable',
             'price' => 'required|numeric', //price e gradation modificati da string in numeric
             'gradation' => 'nullable|numeric',
             'is_alcoholic' => 'required',
-=======
-            'name' => 'required',
-            'ingredients' => 'required',
-            'price' => 'nullable',
-            'gradation' => 'nullable',
-            'is_alcoholic' => 'nullable',
->>>>>>> 775448b547451072388402f80395b32d2439a53b
         ]);
 
         $cocktail = new Cocktail();
@@ -61,11 +49,7 @@ class CocktailController extends Controller
         $cocktail->gradation = (float) $validated['gradation'];
         $cocktail->is_alcoholic = $validated['is_alcoholic'];
         $cocktail->save();
-<<<<<<< HEAD
         return redirect()->route('cocktails.index')->with('success', 'cockail salvato');
-=======
-        return redirect()->route('cocktails.index')->with('Cocktail salvato');
->>>>>>> 775448b547451072388402f80395b32d2439a53b
     }
 
     /**
