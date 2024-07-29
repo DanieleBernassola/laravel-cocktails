@@ -55,13 +55,31 @@
                             <a href="{{ route('cocktails.edit', $cocktail->id) }}" class="btn btn-warning rounded-1">
                                 <i class="fa-solid fa-pencil" style="color: #ffffff;"></i>
                             </a>
-                            <form action="{{ route('cocktails.destroy', $cocktail->id) }}" method="POST" style="display:inline-block;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger rounded-1">
-                                    <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
-                                </button>
-                            </form>
+                            <button type="button" class="btn btn-danger rounded-1" data-bs-toggle="modal" data-bs-target="#deleteCocktailModal{{ $cocktail->id }}">
+                                <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
+                            </button>
+                            <div class="modal fade" id="deleteCocktailModal{{ $cocktail->id }}" tabindex="-1" aria-labelledby="deleteCocktailModalLabel{{ $cocktail->id }}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteCocktailModalLabel{{ $cocktail->id }}">Delete cocktail</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete this cocktail?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <form method="POST" action="{{ route('cocktails.destroy', $cocktail->id) }}" style="display:inline-block;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Dismiss</button>
+                                                <button type="submit" class="btn btn-danger rounded-1">
+                                                    <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td> 
                     </tr>
                 @endforeach 
