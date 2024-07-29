@@ -1,5 +1,6 @@
 @extends('layouts.backoffice')
 
+<<<<<<< HEAD
 {{-- cocktail.index --}}
 
 @section('content')
@@ -72,3 +73,8 @@
 
 
 @endsection
+=======
+    @section('content')
+        <p>Sono l'index</p>
+    @endsection
+>>>>>>> 775448b547451072388402f80395b32d2439a53b

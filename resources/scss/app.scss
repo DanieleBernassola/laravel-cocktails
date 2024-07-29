@@ -1,6 +1,13 @@
 @import "~bootstrap/scss/bootstrap";
-@import './partials/variables';
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import "./partials/variables";
+@import "./partials/create-page";
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body {
     color: white;
@@ -35,7 +42,15 @@ header {
 
 footer {
     background: rgb(119, 140, 204);
+<<<<<<< HEAD
     background: linear-gradient(0deg, rgba(119, 140, 204, 1) 0%, rgba(196, 159, 224, 1) 100%);
+=======
+    background: linear-gradient(
+        0deg,
+        rgba(119, 140, 204, 1) 0%,
+        rgba(196, 159, 224, 1) 100%
+    );
+>>>>>>> 775448b547451072388402f80395b32d2439a53b
 }
 
 .homepage {
@@ -44,9 +59,14 @@ footer {
     .jumbo {
         height: 100vh;
         width: 100vw;
+<<<<<<< HEAD
         background-image: url('https://cdn.vox-cdn.com/thumbor/jL8ReHQSfv7z9rDBN-yOs9y6qiI=/0x0:1440x1800/1200x675/filters:focal(605x785:835x1015)/cdn.vox-cdn.com/uploads/chorus_image/image/72868729/nicola_parisi_ninth_life_nov2023_0086.0.jpg');
         background-size: cover;
         background-repeat: no-repeat;
+=======
+        background-image: url("https://cdn.vox-cdn.com/thumbor/jL8ReHQSfv7z9rDBN-yOs9y6qiI=/0x0:1440x1800/1200x675/filters:focal(605x785:835x1015)/cdn.vox-cdn.com/uploads/chorus_image/image/72868729/nicola_parisi_ninth_life_nov2023_0086.0.jpg");
+        object-fit: fill;
+>>>>>>> 775448b547451072388402f80395b32d2439a53b
         opacity: 85%;
 
         .log-line {
@@ -55,11 +75,14 @@ footer {
             width: 70%;
             text-align: left;
         }
-
     }
 
     .grow {
+<<<<<<< HEAD
         transition: all .3s ease-in-out;
+=======
+        transition: all 0.3s ease-in-out;
+>>>>>>> 775448b547451072388402f80395b32d2439a53b
     }
 
     .grow:hover {
@@ -77,7 +100,6 @@ footer {
         right: 10px;
         background-color: white;
     }
-
 }
 
 
