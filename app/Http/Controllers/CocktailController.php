@@ -49,14 +49,14 @@ class CocktailController extends Controller
 
             $filename = time() . '.' . $extension;
 
-            $path = 'uploads/cocktails/';
+            $path = public_path('uploads/cocktails/');
             $file->move($path, $filename);
         }
 
         $cocktail = new Cocktail();
         $cocktail->name = $validated['name'];
         $cocktail->ingredients = $validated['ingredients'];
-        $cocktail->image = $validated['image'];
+        $cocktail->image = $filename ? 'uploads/cocktails/' . $filename : null;
         $cocktail->price = (float) $validated['price'];
         $cocktail->gradation = (float) $validated['gradation'];
         $cocktail->is_alcoholic = $validated['is_alcoholic'];
