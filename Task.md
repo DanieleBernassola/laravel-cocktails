@@ -1,9 +1,9 @@
 
-[] inserimento del link sull header al backoffice
+[x] inserimento del link sull header al backoffice
 [x] eseguire un controllo dello style del backoffice
-[] test delle file blade per la gestione del cockatail
+[] test dei file blade per la gestione del cockatail
 
-    []controllo del blade index
+    [x]controllo del blade index
     []controllo del blade create
     []controllo del blade edit
     []controllo del blade show

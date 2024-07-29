@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Cocktail;
 use Illuminate\Http\Request;
 
+
+//controller con le crud
+
 class CocktailController extends Controller
 {
     /**
