@@ -30,12 +30,12 @@
                     <tr>
                         <td>
                             <div>
-                                <p class=" fw-bolder text-purple">{{ $cocktail->name }}</p>
+                                <p class=" fw-bolder text-blue">{{ $cocktail->name }}</p>
                             </div>
                         </td>
                         <td>
                             <div>
-                                @if ($cocktail->is_alcoholic == 0)
+                                @if ($cocktail->is_alcoholic)
                                     <p class="text-danger"> is alcoholic</p>
                                     @else
                                     <p class="text-blue"> is not alcoholic</p>
