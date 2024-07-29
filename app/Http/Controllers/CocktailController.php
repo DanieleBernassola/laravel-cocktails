@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cocktail;
+use App\Models\CocktailIngredient;
 use App\Models\Ingredient;
 use Illuminate\Http\Request;
 
@@ -58,9 +59,9 @@ class CocktailController extends Controller
      */
     public function show(string $id)
     {
-        $cocktail_ingredients = Ingredient::findOrFail($id);
+        $cocktail_ingredients = CocktailIngredient::findOrFail($id);
         $cocktail = Cocktail::findOrFail($id);
-        return view('cocktails.show', compact('cocktail'));
+        return view('cocktails.show', compact('cocktail', 'cocktail_ingredients'));
     }
 
     /**
