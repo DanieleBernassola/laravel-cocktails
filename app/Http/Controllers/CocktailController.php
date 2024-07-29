@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cocktail;
+use App\Models\Ingredient;
 use Illuminate\Http\Request;
 
 
@@ -34,9 +35,10 @@ class CocktailController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
+
         $validated = $request->validate([
             'name' => 'required| max:50',
-            'ingredients' => 'nullable',
             'price' => 'required|numeric', //price e gradation modificati da string in numeric
             'gradation' => 'nullable|numeric',
             'is_alcoholic' => 'required',
@@ -44,7 +46,6 @@ class CocktailController extends Controller
 
         $cocktail = new Cocktail();
         $cocktail->name = $validated['name'];
-        $cocktail->ingredients = $validated['ingredients'];
         $cocktail->price = (float) $validated['price'];
         $cocktail->gradation = (float) $validated['gradation'];
         $cocktail->is_alcoholic = $validated['is_alcoholic'];
@@ -57,6 +58,7 @@ class CocktailController extends Controller
      */
     public function show(string $id)
     {
+        $cocktail_ingredients = Ingredient::findOrFail($id);
         $cocktail = Cocktail::findOrFail($id);
         return view('cocktails.show', compact('cocktail'));
     }
@@ -77,7 +79,6 @@ class CocktailController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required',
-            'ingredients' => 'required',
             'price' => 'required|numeric',
             'gradation' => 'nullable|numeric',
             'is_alcoholic' => 'required',
@@ -88,7 +89,6 @@ class CocktailController extends Controller
 
 
         $cocktail->name = $validated['name'];
-        $cocktail->ingredients = $validated['ingredients'];
         $cocktail->price = (float)$validated['price'];
         $cocktail->gradation = (float)$validated['gradation'];
         $cocktail->is_alcoholic = $validated['is_alcoholic'];

@@ -15,6 +15,11 @@
                     <p class="text-purple">Analcolico</p>
                 @endif
 
+                {{-- @foreach ($ingredients as $ingredient)
+                <p class="text-dark">{{ $ingredient->ingredients }}</p>
+                    
+                @endforeach --}}
+
                 <a href="{{ route('cocktails.index') }}" class="btn btn-primary rounded-1">
                     <i class="fa-solid fa-list" style="color: #ffffff;"></i>
                 </a>
