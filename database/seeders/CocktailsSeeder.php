@@ -24,7 +24,7 @@ class CocktailsSeeder extends Seeder
             $cocktail = new Cocktail();
 
             $cocktail->name = $faker->word . ' ' . $faker->colorName;
-            $cocktail->ingredients = implode(', ', $faker->randomElements($ingredientsList, $faker->numberBetween(3, 5)));
+            //$cocktail->ingredients = implode(', ', $faker->randomElements($ingredientsList, $faker->numberBetween(3, 5)));
             $cocktail->price = $faker->randomFloat(2, 5, 20);
             $cocktail->gradation = $faker->randomFloat(2, 0, 40);
             $cocktail->is_alcoholic = $faker->boolean();

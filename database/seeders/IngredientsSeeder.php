@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class IngredientsSeeder extends Seeder
 {
@@ -12,18 +13,10 @@ class IngredientsSeeder extends Seeder
      */
     public function run(): void
     {
-        $ingredientsList = [
-            'Rum', 'Vodka', 'Gin', 'Tequila', 'Whiskey', 'Lime', 'Lemon', 'Mint', 'Sugar', 'Soda', 'Cola', 'Orange Juice', 'Pineapple Juice', 'Grenadine'
-        ];
-
-        for ($i = 0; $i < 10; $i++) {
-            $cocktail = new Cocktail();
-
-            $cocktail->name = $faker->word . ' ' . $faker->colorName;
-            $cocktail->ingredients = implode(', ', $faker->randomElements($ingredientsList, $faker->numberBetween(3, 5)));
-            $cocktail->price = $faker->randomFloat(2, 5, 20);
-            $cocktail->gradation = $faker->randomFloat(2, 0, 40);
-
-            $cocktail->save();
+        DB::table('ingredients')->insert([
+            ['name' => 'vodka','description' => 'From Russia strong flavour', 'gradation' => '20'],
+            ['name' => 'gin','description' => 'From England strong flavour', 'gradation' => '25'],
+            ['name' => 'grappa','description' => 'From Italy strong flavour', 'gradation' => '30']
+        ]);
     }
 }
