@@ -76,8 +76,9 @@ class CocktailController extends Controller
      */
     public function show(string $id)
     {
-        $cocktail_ingredients = CocktailIngredient::findOrFail($id);
         $cocktail = Cocktail::findOrFail($id);
+        // $cocktail_ingredients = $cocktail->ingredients;
+        $cocktail_ingredients = CocktailIngredient::all();
         return view('cocktails.show', compact('cocktail', 'cocktail_ingredients'));
     }
 

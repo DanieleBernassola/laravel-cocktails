@@ -6,7 +6,6 @@
             <h3 class="text-blue my-5">Informazioni cocktail</h3>
             <div class="col mb-5">
                 <h3 class="text-blue">Nome: {{ $cocktail->name }}</h3>
-                <p class="text-blue">Ingredienti: {{ $cocktail->ingredients }}</p>
                 <p class="text-blue">Prezzo: {{ $cocktail->price }} $</p>
                 <div class="img-container">
                     <img src="{{ asset($cocktail->image) }}" alt="{{ $cocktail->name }}"></img>
@@ -19,8 +18,7 @@
                 @endif
 
                 @foreach ($cocktail_ingredients as $cocktail_ingredient)
-                <p class="text-dark">{{ $cocktail_ingredient->cocktail_id }}</p>
-                    
+                    <p class="text-dark">{{ $cocktail_ingredient->cocktail_id->$cocktail->name }}</p>
                 @endforeach
 
                 <a href="{{ route('cocktails.index') }}" class="btn btn-primary rounded-1">
