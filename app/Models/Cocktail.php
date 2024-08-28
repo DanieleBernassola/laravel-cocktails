@@ -9,15 +9,6 @@ class Cocktail extends Model
 {
     use HasFactory;
 
-<<<<<<< HEAD
-    protected $fillable = ['name', 'price', 'gradation', 'is_alcoholic'];
-
-    public function cocktails()
-    {
-        return $this->belongsToMany(Ingredient::class, 'cocktails_ingredients');
-    }
-}
-=======
     protected $table = 'cocktails';
 
     protected $fillable = [
@@ -28,5 +19,9 @@ class Cocktail extends Model
         'gradiation',
         'is_alcoholic',
     ];
+
+    public function cocktails()
+    {
+        return $this->belongsToMany(Ingredient::class, 'cocktails_ingredients');
+    }
 }
->>>>>>> main

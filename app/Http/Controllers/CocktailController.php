@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cocktail;
-<<<<<<< HEAD
 use App\Models\CocktailIngredient;
 use App\Models\Ingredient;
-=======
+
 use FFI;
->>>>>>> main
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -44,11 +42,8 @@ class CocktailController extends Controller
 
         $validated = $request->validate([
             'name' => 'required| max:50',
-<<<<<<< HEAD
-=======
             'ingredients' => 'nullable',
             'image' => 'nullable|mimes:png,jpg,jpeg,webp',
->>>>>>> main
             'price' => 'required|numeric', //price e gradation modificati da string in numeric
             'gradation' => 'nullable|numeric',
             'is_alcoholic' => 'required',
@@ -67,11 +62,8 @@ class CocktailController extends Controller
 
         $cocktail = new Cocktail();
         $cocktail->name = $validated['name'];
-<<<<<<< HEAD
-=======
         $cocktail->ingredients = $validated['ingredients'];
         $cocktail->image = $filename ? 'uploads/cocktails/' . $filename : null;
->>>>>>> main
         $cocktail->price = (float) $validated['price'];
         $cocktail->gradation = (float) $validated['gradation'];
         $cocktail->is_alcoholic = $validated['is_alcoholic'];
@@ -105,11 +97,8 @@ class CocktailController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required',
-<<<<<<< HEAD
-=======
             'ingredients' => 'required',
             'image' => 'nullable|mimes:png,jpg,jpeg,webp',
->>>>>>> main
             'price' => 'required|numeric',
             'gradation' => 'nullable|numeric',
             'is_alcoholic' => 'required',
