@@ -21,7 +21,7 @@ header {
     a:hover {
         color: rgba(123, 35, 65, 0.84);
     }
-    
+
     a::before {
         content: "";
         position: absolute;
@@ -34,21 +34,24 @@ header {
         transform: scaleX(0);
         transition: transform 0.3s ease;
     }
-    
+
     a:hover::before {
         transform: scaleX(1);
     }
-
 }
 
 footer {
     background: rgb(119, 140, 204);
-    background: linear-gradient(0deg, rgba(119, 140, 204, 1) 0%, rgba(196, 159, 224, 1) 100%);
+    background: linear-gradient(
+        0deg,
+        rgba(119, 140, 204, 1) 0%,
+        rgba(196, 159, 224, 1) 100%
+    );
 
     a:hover {
         color: rgba(123, 35, 65, 0.84);
     }
-    
+
     a::before {
         content: "";
         position: absolute;
@@ -61,11 +64,10 @@ footer {
         transform: scaleX(0);
         transition: transform 0.3s ease;
     }
-    
+
     a:hover::before {
         transform: scaleX(1);
     }
-    
 }
 
 .homepage {
@@ -74,7 +76,7 @@ footer {
     .jumbo {
         height: 100vh;
         width: 100vw;
-        background-image: url('https://cdn.vox-cdn.com/thumbor/jL8ReHQSfv7z9rDBN-yOs9y6qiI=/0x0:1440x1800/1200x675/filters:focal(605x785:835x1015)/cdn.vox-cdn.com/uploads/chorus_image/image/72868729/nicola_parisi_ninth_life_nov2023_0086.0.jpg');
+        background-image: url("https://cdn.vox-cdn.com/thumbor/jL8ReHQSfv7z9rDBN-yOs9y6qiI=/0x0:1440x1800/1200x675/filters:focal(605x785:835x1015)/cdn.vox-cdn.com/uploads/chorus_image/image/72868729/nicola_parisi_ninth_life_nov2023_0086.0.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         opacity: 85%;
@@ -88,7 +90,7 @@ footer {
     }
 
     .grow {
-        transition: all .3s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
 
     .grow:hover {
@@ -108,7 +110,9 @@ footer {
     }
 }
 
-
+.form-group img {
+    width: 40%;
+}
 
 /**********************
     colore Sidebar
@@ -117,7 +121,6 @@ footer {
 .bg-costum {
     background-color: $blue;
 }
-
 
 .text-purple {
     color: $purple;
