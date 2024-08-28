@@ -19,4 +19,9 @@ class Cocktail extends Model
         'gradiation',
         'is_alcoholic',
     ];
+
+    public function cocktails()
+    {
+        return $this->belongsToMany(Ingredient::class, 'cocktails_ingredients');
+    }
 }

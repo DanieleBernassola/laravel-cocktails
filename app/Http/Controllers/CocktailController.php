@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cocktail;
+use App\Models\CocktailIngredient;
+use App\Models\Ingredient;
+
 use FFI;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -35,6 +38,8 @@ class CocktailController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
+
         $validated = $request->validate([
             'name' => 'required| max:50',
             'ingredients' => 'nullable',
@@ -71,8 +76,9 @@ class CocktailController extends Controller
      */
     public function show(string $id)
     {
+        $cocktail_ingredients = CocktailIngredient::findOrFail($id);
         $cocktail = Cocktail::findOrFail($id);
-        return view('cocktails.show', compact('cocktail'));
+        return view('cocktails.show', compact('cocktail', 'cocktail_ingredients'));
     }
 
     /**
@@ -118,7 +124,6 @@ class CocktailController extends Controller
         }
 
         $cocktail->name = $validated['name'];
-        $cocktail->ingredients = $validated['ingredients'];
         $cocktail->price = (float)$validated['price'];
         $cocktail->gradation = (float)$validated['gradation'];
         $cocktail->is_alcoholic = $validated['is_alcoholic'];
