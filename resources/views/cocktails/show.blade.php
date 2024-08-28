@@ -8,10 +8,13 @@
                 <h3 class="text-blue">Nome: {{ $cocktail->name }}</h3>
                 <p class="text-blue">Ingredienti: {{ $cocktail->ingredients }}</p>
                 <p class="text-blue">Prezzo: {{ $cocktail->price }} $</p>
+                <div class="img-container">
+                    <img src="{{ asset($cocktail->image) }}" alt="{{ $cocktail->name }}"></img>
+                </div>
                 @if ($cocktail->is_alcoholic)
                     <p class="text-danger">ALCOLICO</p>
                     <p class="text-danger">Gradazione alcolica: {{ $cocktail->gradation }}</p>
-                    @else
+                @else
                     <p class="text-purple">Analcolico</p>
                 @endif
 
