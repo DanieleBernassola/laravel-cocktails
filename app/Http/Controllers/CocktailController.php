@@ -88,7 +88,10 @@ class CocktailController extends Controller
     public function edit(string $id)
     {
         $cocktail = Cocktail::findOrFail($id);
-        return view('cocktails.edit', compact('cocktail'));
+
+        $cocktail_ingredients = $cocktail->ingredients;     // Cocktail::all()
+        
+        return view('cocktails.edit', compact('cocktail', 'cocktail_ingredients'));
     }
 
     /**
